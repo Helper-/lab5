@@ -14,10 +14,10 @@ function initializePage() {
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
+
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
-	} 
+	}
 	else if (name == "Ivan Sutherland") {
 		return "Vandal Heist Run";
 	}
@@ -44,3 +44,9 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
+$(".names").click(function(e) {
+	e.preventDefault();
+	var ana_name = anagrammedName($(this).text());
+	$(this).text(ana_name);
+});
